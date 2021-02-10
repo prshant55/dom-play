@@ -1,5 +1,85 @@
 <html>
-<body>
-<p> here is my repo for dom</p>
+    <head>
+        <title> DOM Play </title>
+        <style>
+
+            /*#clickSpans span {
+               background-color:aqua;
+           } */
+           html {background-color:#696664;}
+        </style>        
+    </head>
+<body background-color="grey">
+    <h1>The Social Networking.</h1>
+    <img src="images/fb.png" alt="pic!" float="right" id="logo" width="20%" />
+    <div id="clickSpans">
+        <p><span data-actor="mark">Mark: How do you distinguish yourself in a population of people who all got 1600 on their SAT's?</span></p>
+        <p><span data-actor="eric">Eric: I didn't know they take SAT's in China.</span></p>
+        <p><span data-actor="mark">Mark: I wasn't talking about China anymore, I was talking about here.</span></p>
+        <p><span data-actor="eric">Eric: You got 1600?</span></p>
+        <p><span data-actor="mark">Mark: You can sing in an a Capella group.</span></p>
+        <p><span data-actor="brica">Brica: Does that mean that you actually got nothing wrong?</span></p>
+        <p><span data-actor="mark">Mark: Or you row crew or you invent a 25 dollar PC.</span></p>
+        <p><span data-actor="eric">Eric:  Or you get into a final club.</span></p>
+        <p><span data-actor="mark">Mark: Or you get into a final club, exactly.</span></p>
+        <p><span data-actor="eric">Eric: I like guys who row crew.</span></p>
+        <p><span data-actor="mark">Mark: Well I can't do that. And yes, it means I got nothing wrong on the test.</span></p>
+        <p><span data-actor="eric">Eric: Have you ever tried?</span></p>
+        <p><span data-actor="mark">Mark: I'm trying now.</span></p>
+        <p><span data-actor="eric">Eric: To row crew?</span></p>
+        <p><span data-actor="mark">Mark: To get into a final club. To row crew? No. Are you, like--whatever--crazy?</span></p>
+        <p><span data-actor="eric">Eric:  Sometimes, Mark-seriously-YOU say two things at once and I'm not sure which one we're talking about.</span></p>
+        <p><span data-actor="mark">Mark: But you've seen guys who row crew, right?</span></p>
+        <p><span data-actor="eric">Eric: No.</span></p>
+        <p><span data-actor="mark">Mark: Okay, well.. they're bigger than me. They're world class athletes. And a second ago you said you like guys who row crew so I assumed you'd met one.</span></p>
+        <p><span data-actor="brica">Brica:  I guess I meant I liked the idea of it. The way a girl likes cowboys.</span></p>
+
+    </div>
+    <script>
+        // changed to var to make spans be gloabally accessable
+        var spans = document.querySelectorAll("#clickSpans span");
+        for (const mySpan of spans){
+            mySpan.addEventListener("click",function(event){
+                
+                
+                
+                //alert(mySpan.dataset.actor);
+                highlightActor(mySpan.dataset.actor);
+                
+
+
+            });
+        }
+            //console.log(spans);
+           
+            function highlightActor(myActor)
+            {
+            
+                for(const mySpan of spans){
+
+                    if (mySpan.dataset.actor == myActor)//current actor ,highlight
+                    {
+                        mySpan.style.backgroundColor = `yellow`;
+                        mySpan.style.fontWeight = 'bold';
+                    }
+                    else//no current actor ,no highlight
+                    {
+                        mySpan.style.backgroundColor = `#696664`;
+                        mySpan.style.fontWeight = 'normal';
+                    }
+
+
+                }
+            
+            }
+            
+            
+            
+            
+            
+
+        
+        
+    </script>
 </body>
 </html>
